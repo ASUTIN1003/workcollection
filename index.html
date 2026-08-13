@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汪正涵 · 产品调研作品集</title>
+<meta name="description" content="汪正涵 — 产品经理候选人 · C端产品调研作品集：抖音商城搜索、醒图AI修图、小红书AI图文三份深度调研报告">
+<style>
+  :root{
+    --bg:#f6f7fb; --card:#ffffff; --ink:#111827; --sub:#6b7280;
+    --line:#e5e7eb; --brand:#4f46e5;
+    --dy:#fe2c55; --xt:#7c3aed; --xhs:#ff2442;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ===== 顶部导航 ===== */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:800;font-size:17px;letter-spacing:.5px}
+  .logo span{color:var(--brand)}
+  nav .links a{color:var(--sub);text-decoration:none;font-size:14px;margin-left:24px;transition:color .2s}
+  nav .links a:hover{color:var(--brand)}
+
+  /* ===== Hero ===== */
+  .hero{padding:72px 0 48px}
+  .hero .tag{display:inline-block;background:#eef2ff;color:var(--brand);font-size:13px;font-weight:600;padding:4px 14px;border-radius:20px;margin-bottom:18px}
+  .hero h1{font-size:40px;line-height:1.25;font-weight:800;letter-spacing:-.5px}
+  .hero h1 em{font-style:normal;color:var(--brand)}
+  .hero .sub{margin-top:16px;font-size:17px;color:var(--sub);max-width:640px}
+  .hero .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:13.5px;color:var(--sub);display:flex;align-items:center;gap:6px}
+  .chip b{color:var(--ink)}
+
+  /* ===== 数据条 ===== */
+  .stats{margin:40px 0 8px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .stat .num{font-size:30px;font-weight:800;color:var(--brand);line-height:1.2}
+  .stat .lbl{font-size:13px;color:var(--sub);margin-top:6px}
+
+  /* ===== 板块标题 ===== */
+  .sec{padding:56px 0 8px}
+  .sec h2{font-size:26px;font-weight:800;letter-spacing:-.3px}
+  .sec .lead{color:var(--sub);font-size:15px;margin-top:8px;max-width:640px}
+
+  /* ===== 报告卡片 ===== */
+  .reports{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+  .rcard{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+  .rcard:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(15,23,42,.10)}
+  .rcard .band{height:6px}
+  .rcard.dy .band{background:var(--dy)} .rcard.xt .band{background:var(--xt)} .rcard.xhs .band{background:var(--xhs)}
+  .rcard .body{padding:24px;display:flex;flex-direction:column;flex:1}
+  .rcard .plat{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .rcard.dy .plat{color:var(--dy)} .rcard.xt .plat{color:var(--xt)} .rcard.xhs .plat{color:var(--xhs)}
+  .rcard h3{font-size:19px;margin:8px 0 10px;line-height:1.4}
+  .rcard p{font-size:13.5px;color:var(--sub);flex:1}
+  .rcard .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .rcard .tags i{font-style:normal;font-size:11.5px;font-weight:600;background:#f3f4f6;color:#4b5563;padding:3px 10px;border-radius:12px}
+  .rcard .go{margin-top:16px;font-size:13.5px;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px}
+
+  /* ===== 关于 ===== */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px}
+  .abox{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .abox h3{font-size:17px;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .abox ul{list-style:none}
+  .abox li{font-size:14px;color:#374151;padding:7px 0;border-bottom:1px dashed #f0f0f0;display:flex;gap:8px}
+  .abox li:last-child{border-bottom:none}
+  .abox li::before{content:"▸";color:var(--brand);font-weight:700}
+  .skill{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .skill span{background:#f3f4f6;border:1px solid var(--line);font-size:12.5px;padding:5px 12px;border-radius:16px;color:#374151}
+
+  /* ===== 页脚 ===== */
+  footer{margin-top:72px;border-top:1px solid var(--line);padding:32px 0 48px;color:var(--sub);font-size:13.5px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media (max-width:860px){
+    .hero{padding:48px 0 32px}
+    .hero h1{font-size:30px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .reports{grid-template-columns:1fr}
+    .about{grid-template-columns:1fr}
+    nav .links a{margin-left:14px;font-size:13px}
+  }
+</style>
+<script src="/_vd/analytics.js" defer></script></head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">汪正涵 <span>·</span> 产品作品集</div>
+    <div class="links">
+      <a href="#reports">调研报告</a>
+      <a href="#about">关于我</a>
+      <a href="#contact">联系方式</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag">🎯 目标岗位：产品经理（C端）· 日常实习</span>
+    <h1>用 <em>真机实测</em> 和 <em>用户问卷</em><br>拆解主流 C 端产品</h1>
+    <p class="sub">您好，我是汪正涵，东北大学计算机科学与技术专业在读。我独立完成了三份 C 端产品深度调研报告，覆盖电商搜索、AI 修图工具、AI 图文创作三大赛道——每份都包含真机实测、用户分层、竞品对标与分阶段迭代方案。</p>
+    <div class="meta">
+      <div class="chip">📱 <b>3 大平台</b> 抖音 / 醒图 / 小红书</div>
+      <div class="chip">📊 <b>209 份</b> 自设计问卷回收</div>
+      <div class="chip">🔍 <b>12+ 组</b> 跨场景真机实测</div>
+      <div class="chip">🏷️ <b>3 份</b> 完整调研报告</div>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="num">53%</div><div class="lbl">「看后搜」行业数据引用</div></div>
+    <div class="stat"><div class="num">209</div><div class="lbl">有效问卷样本</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">核心竞品对标</div></div>
+    <div class="stat"><div class="num">P0-P2</div><div class="lbl">分级迭代方案</div></div>
+  </div>
+</section>
+
+<section class="sec wrap" id="reports">
+  <h2>调研报告</h2>
+  <p class="lead">三份报告均为独立完成：自选选题 → 清理缓存真机实测 → 自设计并回收问卷 → 用户分层 → 竞品对标 → 输出含灰度机制的分阶段迭代方案。所有结论标注数据边界，不虚构后台数据。</p>
+  <div class="reports">
+
+    <a class="rcard dy" href="report-douyin.html">
+      <div class="band"></div>
+      <div class="body">
+        <span class="plat">抖音 · 电商搜索</span>
+        <h3>抖音商城搜索模块真机实测与迭代方案</h3>
+        <p>3 大品类 × 9 组关键词真机实测，对标淘宝搜索；72 份问卷验证「广告干扰」为首要痛点；判断「全盘复刻淘宝」为伪需求，输出保留「内容+货架」差异化优势的短中长期方案与 50/50 灰度测试。</p>
+        <div class="tags"><i>真机实测</i><i>问卷 72 份</i><i>竞品对标</i><i>灰度方案</i></div>
+        <div class="go">阅读完整报告 →</div>
+      </div>
+    </a>
+
+    <a class="rcard xt" href="report-xingtu.html">
+      <div class="band"></div>
+      <div class="body">
+        <span class="plat">醒图 · AI 修图</span>
+        <h3>醒图 APP AI 修图产品分析</h3>
+        <p>三类种草素材全链路实测，对标行业龙头美图秀秀；73 份问卷显示 48.57% 用户遇到 AI 画面畸形问题；判断「一键爆款」为伪需求，提出场景识别、分层付费、局部编辑三大迭代方向，并给出行业数据支撑的量化预期。</p>
+        <div class="tags"><i>竞品对标</i><i>问卷 73 份</i><i>分层付费</i><i>量化预期</i></div>
+        <div class="go">阅读完整报告 →</div>
+      </div>
+    </a>
+
+    <a class="rcard xhs" href="report-xiaohongshu.html">
+      <div class="band"></div>
+      <div class="body">
+        <span class="plat">小红书 · AI 图文</span>
+        <h3>小红书 AI 图文产品分析</h3>
+        <p>12 组跨场景真机测试，对标抖音图文；64 份问卷显示图文脱节（42.5%）与模板化（40%）为核心痛点；发现「识图生成种草正文」为行业共同空白，按 P0/P1/P2 输出分级落地方案。</p>
+        <div class="tags"><i>12 组实测</i><i>问卷 64 份</i><i>P0-P2 分级</i><i>差异化机会</i></div>
+        <div class="go">阅读完整报告 →</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="sec wrap" id="about">
+  <h2>关于我</h2>
+  <p class="lead">计科专业出身，具备数据与逻辑基础；重度使用内容社区产品，以创作者视角理解 C 端用户。</p>
+  <div class="about">
+    <div class="abox">
+      <h3>📌 个人经历</h3>
+      <ul>
+        <li>计算机科学与技术专业在读，数据库等课程成绩优异</li>
+        <li>自媒体运营经验：最高平台粉丝 5w+，单篇阅读破百万，平台内变现 + 品牌置换合作</li>
+        <li>曾任学院宣传部干事，具备活动组织与内容宣发经验</li>
+        <li>获全国大学生数学竞赛省一等奖、连续获校综合奖学金</li>
+      </ul>
+    </div>
+    <div class="abox">
+      <h3>🧰 技能清单</h3>
+      <div class="skill">
+        <span>产品调研方法论</span><span>用户问卷设计</span><span>竞品分析</span>
+        <span>真机实测</span><span>需求分析</span><span>PRD 撰写</span>
+        <span>SQL 基础查询</span><span>Figma 原型绘制</span><span>创作者后台数据分析</span>
+        <span>剪映 / 醒图 / 美图秀秀</span><span>AIGC 工具（ChatGPT/豆包/即梦）</span><span>英文产品文档阅读</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div><b>汪正涵</b> · zhenghanwang180@gmail.com</div>
+    <div>北京 欢迎联系</div>
+  </div>
+</footer>
+
+<div data-vd-widget-root data-vd-slug="26ng95y5" data-vd-messages="0" data-vd-branding="1"></div><script src="/_vd/widget.js" defer></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"032a837c7e3c4d90b710926b44166cfc","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
